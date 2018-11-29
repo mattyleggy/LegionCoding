@@ -1,0 +1,95 @@
+body {
+    background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+body, html, main {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-card {
+    position: relative;
+    display: block;
+    height: 500px;
+    width: 300px;
+    border-radius: 20px;    
+}
+
+.product-card > div {
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    transition: 0.5s ease all;   
+    backface-visibility: hidden;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+    border-radius: 20px;    
+}
+
+.card-logo {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    height: 100px;    
+    width: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+    border-radius: 100px;
+    background: #000;
+    background-image: url("../images/logo.png");
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+}
+
+.card-top {
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    height: 25%; 
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.card-title {
+    color: rgba(255,255,255,0.8);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-bottom {
+    background: #fff;
+    height: 75%; 
+    width: 100%;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+
+.product-card > .card-front {        
+    transform: perspective(500px) rotateY(0deg);
+}
+
+.product-card > .card-back {         
+    transform: perspective(500px) rotateY(180deg);
+}
+
+.product-card:hover > .card-front {
+    transform: perspective(500px) rotateY(-180deg);
+}
+
+.product-card:hover > .card-back {
+    transform: perspective(500px) rotateY(0deg);   
+}
